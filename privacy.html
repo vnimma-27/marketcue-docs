@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MarketCue — Privacy Policy</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #ffffff;
+      --bg-elev: #f4f6fa;
+      --text: #111111;
+      --text-muted: #555555;
+      --border: #e1e4ea;
+      --accent: #1f6feb;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0f1115;
+        --bg-elev: #1c1c1e;
+        --text: #f0f0f0;
+        --text-muted: #aaaaaa;
+        --border: #2a2a2e;
+        --accent: #4d8fff;
+      }
+    }
+    * { box-sizing: border-box; }
+    html, body { background: var(--bg); color: var(--text); }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, system-ui, sans-serif;
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 32px 20px 64px;
+      line-height: 1.6;
+      font-size: 16px;
+    }
+    h1 { font-size: 28px; margin-bottom: 4px; }
+    h2 { font-size: 18px; margin-top: 32px; border-bottom: 1px solid var(--border); padding-bottom: 6px; }
+    .meta { color: var(--text-muted); font-size: 14px; margin-bottom: 24px; }
+    a { color: var(--accent); }
+    code { background: var(--bg-elev); padding: 2px 6px; border-radius: 4px; font-size: 14px; }
+    .callout {
+      background: var(--bg-elev);
+      border-left: 4px solid var(--accent);
+      padding: 12px 16px;
+      border-radius: 6px;
+      margin: 16px 0;
+    }
+    ul { padding-left: 20px; }
+    li { margin: 6px 0; }
+    footer { margin-top: 48px; color: var(--text-muted); font-size: 13px; }
+  </style>
+</head>
+<body>
+  <h1>MarketCue — Privacy Policy</h1>
+  <p class="meta">Effective date: April 26, 2026 · Last updated: April 26, 2026</p>
+
+  <div class="callout">
+    <strong>Short version:</strong> MarketCue does not collect, store, or transmit any personal information about you. Your watchlist and schedule live on your device only. We don't have user accounts, logins, analytics, ads, or trackers.
+  </div>
+
+  <h2>Who we are</h2>
+  <p>
+    MarketCue is published by <strong>Compass Labs</strong>, an independent app publisher. For privacy-related questions or requests, contact us at
+    <a href="mailto:contact.market.cue@gmail.com">contact.market.cue@gmail.com</a>.
+  </p>
+
+  <h2>What information MarketCue collects</h2>
+  <p><strong>None that leaves your device.</strong> Specifically:</p>
+  <ul>
+    <li>We do <strong>not</strong> collect your name, email, phone, or location.</li>
+    <li>We do <strong>not</strong> require an account or sign-in.</li>
+    <li>We do <strong>not</strong> use third-party analytics, advertising SDKs, or tracking tools.</li>
+    <li>We do <strong>not</strong> share, sell, or transmit any personal data to any party.</li>
+  </ul>
+
+  <h2>What MarketCue stores on your device</h2>
+  <p>
+    The app stores the following <em>locally</em> on your phone using Android's standard
+    <code>AsyncStorage</code> mechanism. This data never leaves your device and is removed when
+    you uninstall the app:
+  </p>
+  <ul>
+    <li>Your watchlist of stock ticker symbols (e.g., "SPY", "AAPL").</li>
+    <li>Your chosen brief times (e.g., 10:15 AM, 12:30 PM).</li>
+    <li>Settings flags: weekdays-only toggle, mute / pause state, onboarding-complete flag.</li>
+  </ul>
+
+  <h2>Third-party services</h2>
+  <p>
+    To display current stock prices, MarketCue makes anonymous HTTPS requests to
+    <strong>Yahoo Finance's public market-data endpoint</strong>
+    (<code>query1.finance.yahoo.com</code>). These requests contain only the ticker symbol you
+    chose to track (e.g., "AAPL") — they do <strong>not</strong> include your name, email,
+    device identifier, IP-derived identity, or any other personal information beyond what is
+    inherent to a normal HTTPS request (your IP address, as with any web traffic).
+  </p>
+  <p>
+    Yahoo's privacy policy applies to data they may log on their side and is available at
+    <a href="https://policies.yahoo.com/us/en/yahoo/privacy/index.htm">https://policies.yahoo.com/us/en/yahoo/privacy/index.htm</a>.
+  </p>
+
+  <h2>Permissions</h2>
+  <p>MarketCue requests the following Android permission:</p>
+  <ul>
+    <li><strong>Post notifications</strong> — used solely to deliver the scheduled market briefs you configure inside the app at the times you choose. No notifications are pushed remotely from a server.</li>
+  </ul>
+
+  <h2>Notifications</h2>
+  <p>
+    All notifications are scheduled and fired locally on your device using Android's
+    <code>AlarmManager</code> via the <code>expo-notifications</code> framework. We do not use
+    push services, server-side senders, or remote tokens. Disabling notifications in your
+    phone settings stops all briefs immediately.
+  </p>
+
+  <h2>Children</h2>
+  <p>
+    MarketCue is not directed to children under 13 and does not knowingly collect data from
+    children. If you believe a child has somehow shared personal information with the app,
+    contact us and we will assist.
+  </p>
+
+  <h2>Data retention &amp; deletion</h2>
+  <p>
+    Because MarketCue stores everything locally and we receive no data, there is nothing for
+    us to retain or delete on a server. To remove all MarketCue data from your device, simply
+    uninstall the app.
+  </p>
+
+  <h2>Changes to this policy</h2>
+  <p>
+    If we materially change how the app handles data, we will update this page and revise the
+    "Last updated" date above. For significant changes, we will surface a note in the app on
+    the next launch.
+  </p>
+
+  <h2>Contact</h2>
+  <p>
+    Questions or concerns? Email
+    <a href="mailto:contact.market.cue@gmail.com">contact.market.cue@gmail.com</a>.
+  </p>
+
+  <footer>
+    © 2026 Compass Labs. MarketCue is provided as-is, with no warranty.
+  </footer>
+</body>
+</html>
