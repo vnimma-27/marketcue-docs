@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>MarketCue — Privacy Policy</title>
+  <title>TickerCue — Privacy Policy</title>
   <style>
     :root {
       color-scheme: light dark;
@@ -52,87 +52,130 @@
   </style>
 </head>
 <body>
-  <h1>MarketCue — Privacy Policy</h1>
-  <p class="meta">Effective date: April 26, 2026 · Last updated: April 26, 2026</p>
+  <h1>TickerCue — Privacy Policy</h1>
+  <p class="meta">Effective date: May 22, 2026 · Last updated: May 22, 2026</p>
 
   <div class="callout">
-    <strong>Short version:</strong> MarketCue does not collect, store, or transmit any personal information about you. Your watchlist and schedule live on your device only. We don't have user accounts, logins, analytics, ads, or trackers.
+    <strong>Short version:</strong> TickerCue has no user accounts, no logins, no ads, and no
+    third-party analytics or trackers. To deliver your market briefs at the times you choose —
+    even when the app is closed — TickerCue sends your notification token, your watchlist of
+    ticker symbols, and your schedule to TickerCue's own server. We never collect your name,
+    email, phone number, location, or any payment or financial-account information.
   </div>
 
   <h2>Who we are</h2>
   <p>
-    MarketCue is published by <strong>Compass Labs</strong>, an independent app publisher. For privacy-related questions or requests, contact us at
+    TickerCue is published by <strong>Compass Labs</strong>, an independent app publisher. For
+    privacy-related questions or requests, contact us at
     <a href="mailto:contact.market.cue@gmail.com">contact.market.cue@gmail.com</a>.
   </p>
 
-  <h2>What information MarketCue collects</h2>
-  <p><strong>None that leaves your device.</strong> Specifically:</p>
+  <h2>What TickerCue does NOT collect</h2>
   <ul>
-    <li>We do <strong>not</strong> collect your name, email, phone, or location.</li>
+    <li>We do <strong>not</strong> collect your name, email address, phone number, or postal address.</li>
+    <li>We do <strong>not</strong> collect your device's geographic location (GPS or IP-based).</li>
     <li>We do <strong>not</strong> require an account or sign-in.</li>
+    <li>We do <strong>not</strong> collect any payment, banking, brokerage, or financial-account information.</li>
     <li>We do <strong>not</strong> use third-party analytics, advertising SDKs, or tracking tools.</li>
-    <li>We do <strong>not</strong> share, sell, or transmit any personal data to any party.</li>
+    <li>We do <strong>not</strong> sell your data to anyone, ever.</li>
   </ul>
 
-  <h2>What MarketCue stores on your device</h2>
+  <h2>What TickerCue stores on your device</h2>
   <p>
     The app stores the following <em>locally</em> on your phone using Android's standard
-    <code>AsyncStorage</code> mechanism. This data never leaves your device and is removed when
-    you uninstall the app:
+    <code>AsyncStorage</code> mechanism. This data is removed when you uninstall the app:
   </p>
   <ul>
     <li>Your watchlist of stock ticker symbols (e.g., "SPY", "AAPL").</li>
-    <li>Your chosen brief times (e.g., 10:15 AM, 12:30 PM).</li>
+    <li>Your chosen brief times (e.g., 9:15 AM, 12:30 PM).</li>
     <li>Settings flags: weekdays-only toggle, mute / pause state, onboarding-complete flag.</li>
+    <li>An optional on-device log of recently delivered briefs (the "Brief History" debug feature), if you enable it.</li>
   </ul>
 
-  <h2>Third-party services</h2>
+  <h2>What TickerCue sends to its server</h2>
   <p>
-    To display current stock prices, MarketCue makes anonymous HTTPS requests to
-    <strong>Yahoo Finance's public market-data endpoint</strong>
-    (<code>query1.finance.yahoo.com</code>). These requests contain only the ticker symbol you
-    chose to track (e.g., "AAPL") — they do <strong>not</strong> include your name, email,
-    device identifier, IP-derived identity, or any other personal information beyond what is
-    inherent to a normal HTTPS request (your IP address, as with any web traffic).
+    So that briefs can be delivered on schedule even when the app is closed, TickerCue operates
+    a small server (the "TickerCue server", hosted on Cloudflare Workers). When you open the app
+    or change your settings, the app sends the following to that server over an encrypted HTTPS
+    connection:
+  </p>
+  <ul>
+    <li>A <strong>push notification token</strong> issued to your app install by Firebase Cloud
+      Messaging. This identifies your app installation so the server can deliver a notification
+      to it. It is not tied to your real-world identity.</li>
+    <li>Your <strong>watchlist</strong> of ticker symbols.</li>
+    <li>Your <strong>brief schedule</strong> (the times you chose), the weekdays-only toggle,
+      mute / pause state, your move-percentage threshold, and your device's time zone.</li>
+  </ul>
+  <p>
+    The server uses this only to fetch current market prices and send your scheduled brief
+    notifications. The server also keeps a short rolling log (up to the 100 most recent briefs)
+    of what it delivered to your app install — the ticker percentage moves and timestamps — so
+    that the in-app "Brief History" screen can show you what was sent. This log contains market
+    data and timestamps only; it contains no personal identity information.
   </p>
   <p>
-    Yahoo's privacy policy applies to data they may log on their side and is available at
-    <a href="https://policies.yahoo.com/us/en/yahoo/privacy/index.htm">https://policies.yahoo.com/us/en/yahoo/privacy/index.htm</a>.
+    If your app install stops contacting the server for 60 days (for example, because you
+    uninstalled the app), the server automatically deletes your subscription and its associated
+    history. You can also delete this data at any time — see
+    <a href="delete-data.html">Data deletion</a> below.
+  </p>
+
+  <h2>Third-party services</h2>
+  <p>TickerCue relies on the following third-party services:</p>
+  <ul>
+    <li><strong>Cloudflare Workers</strong> — hosts the TickerCue server described above.
+      Cloudflare processes the data on our behalf as a service provider.
+      <a href="https://www.cloudflare.com/privacypolicy/">Cloudflare privacy policy</a>.</li>
+    <li><strong>Firebase Cloud Messaging (Google)</strong> — the delivery transport for push
+      notifications. Google issues the push token and routes notifications to your device.
+      <a href="https://firebase.google.com/support/privacy">Firebase privacy information</a>.</li>
+    <li><strong>Yahoo Finance public market-data endpoint</strong>
+      (<code>query1.finance.yahoo.com</code>) — queried by the TickerCue server to obtain
+      current stock prices. These requests contain only ticker symbols, not any information
+      about you. <a href="https://policies.yahoo.com/us/en/yahoo/privacy/index.htm">Yahoo
+      privacy policy</a>.</li>
+  </ul>
+  <p>
+    We do not consider any of the above to be "selling" or "sharing" your personal data — they
+    are service providers acting on our behalf to operate the app's core feature.
   </p>
 
   <h2>Permissions</h2>
-  <p>MarketCue requests the following Android permission:</p>
+  <p>TickerCue requests the following Android permission:</p>
   <ul>
-    <li><strong>Post notifications</strong> — used solely to deliver the scheduled market briefs you configure inside the app at the times you choose. No notifications are pushed remotely from a server.</li>
+    <li><strong>Post notifications</strong> — used solely to deliver the scheduled market briefs
+      you configure inside the app at the times you choose.</li>
   </ul>
 
   <h2>Notifications</h2>
   <p>
-    All notifications are scheduled and fired locally on your device using Android's
-    <code>AlarmManager</code> via the <code>expo-notifications</code> framework. We do not use
-    push services, server-side senders, or remote tokens. Disabling notifications in your
-    phone settings stops all briefs immediately.
+    Scheduled briefs are normally delivered by the TickerCue server as push notifications, so
+    that the prices shown are current as of the moment the brief fires. If the server cannot be
+    reached, the app falls back to notifications scheduled locally on your device. Disabling
+    notifications in your phone settings stops all briefs immediately.
   </p>
 
   <h2>Children</h2>
   <p>
-    MarketCue is not directed to children under 13 and does not knowingly collect data from
+    TickerCue is not directed to children under 13 and does not knowingly collect data from
     children. If you believe a child has somehow shared personal information with the app,
     contact us and we will assist.
   </p>
 
   <h2>Data retention &amp; deletion</h2>
   <p>
-    Because MarketCue stores everything locally and we receive no data, there is nothing for
-    us to retain or delete on a server. To remove all MarketCue data from your device, simply
-    uninstall the app.
+    Data on your device is removed when you uninstall the app. Data held by the TickerCue
+    server (your push token, watchlist, schedule, and delivered-brief log) can be deleted on
+    request and is also deleted automatically 60 days after your app install stops contacting
+    the server. Full step-by-step instructions are on the
+    <a href="delete-data.html">TickerCue data deletion page</a>.
   </p>
 
   <h2>Changes to this policy</h2>
   <p>
     If we materially change how the app handles data, we will update this page and revise the
-    "Last updated" date above. For significant changes, we will surface a note in the app on
-    the next launch.
+    "Last updated" date above.
   </p>
 
   <h2>Contact</h2>
@@ -142,7 +185,7 @@
   </p>
 
   <footer>
-    © 2026 Compass Labs. MarketCue is provided as-is, with no warranty.
+    © 2026 Compass Labs. TickerCue is provided as-is, with no warranty.
   </footer>
 </body>
 </html>

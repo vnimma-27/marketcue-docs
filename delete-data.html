@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>TickerCue — Data Deletion</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #ffffff;
+      --bg-elev: #f4f6fa;
+      --text: #111111;
+      --text-muted: #555555;
+      --border: #e1e4ea;
+      --accent: #1f6feb;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0f1115;
+        --bg-elev: #1c1c1e;
+        --text: #f0f0f0;
+        --text-muted: #aaaaaa;
+        --border: #2a2a2e;
+        --accent: #4d8fff;
+      }
+    }
+    * { box-sizing: border-box; }
+    html, body { background: var(--bg); color: var(--text); }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, system-ui, sans-serif;
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 32px 20px 64px;
+      line-height: 1.6;
+      font-size: 16px;
+    }
+    h1 { font-size: 28px; margin-bottom: 4px; }
+    h2 { font-size: 18px; margin-top: 32px; border-bottom: 1px solid var(--border); padding-bottom: 6px; }
+    .meta { color: var(--text-muted); font-size: 14px; margin-bottom: 24px; }
+    a { color: var(--accent); }
+    code { background: var(--bg-elev); padding: 2px 6px; border-radius: 4px; font-size: 14px; }
+    .callout {
+      background: var(--bg-elev);
+      border-left: 4px solid var(--accent);
+      padding: 12px 16px;
+      border-radius: 6px;
+      margin: 16px 0;
+    }
+    ol, ul { padding-left: 22px; }
+    li { margin: 6px 0; }
+    footer { margin-top: 48px; color: var(--text-muted); font-size: 13px; }
+  </style>
+</head>
+<body>
+  <h1>TickerCue — Data Deletion</h1>
+  <p class="meta">Last updated: May 22, 2026</p>
+
+  <div class="callout">
+    <strong>Summary:</strong> TickerCue (published by Compass Labs) has no user accounts.
+    You can delete all data held about your app installation directly from the app, or it
+    is deleted automatically once your install stops contacting our server. Details below.
+  </div>
+
+  <h2>What data exists</h2>
+  <p>TickerCue stores two kinds of data:</p>
+  <ul>
+    <li><strong>On your device</strong> — your watchlist, brief schedule, settings, and an
+      optional local brief-history log. This is removed entirely when you uninstall the app.</li>
+    <li><strong>On the TickerCue server</strong> — your push notification token, your watchlist,
+      your schedule, and a rolling log of up to the 100 most recently delivered briefs (ticker
+      percentage moves and timestamps). This is what the steps below remove.</li>
+  </ul>
+
+  <h2>How to delete your data</h2>
+
+  <h3>Option 1 — Clear delivered-brief history from within the app</h3>
+  <ol>
+    <li>Open TickerCue.</li>
+    <li>Go to the <strong>Schedule</strong> tab, then open <strong>Brief History</strong>.</li>
+    <li>Tap <strong>Clear history</strong>.</li>
+  </ol>
+  <p>This deletes the server-side delivered-brief log for your device.</p>
+
+  <h3>Option 2 — Remove your subscription entirely</h3>
+  <p>
+    To remove your push token, watchlist, and schedule from the server, turn off TickerCue
+    notifications, then uninstall the app:
+  </p>
+  <ol>
+    <li>Open your phone's <strong>Settings → Apps → TickerCue → Notifications</strong> and turn
+      notifications off; <em>or</em> pause briefs inside the app.</li>
+    <li>Uninstall TickerCue (long-press the app icon → Uninstall).</li>
+  </ol>
+  <p>
+    Once your install stops contacting the server, your subscription and all associated
+    server-side data are automatically and permanently deleted after <strong>60 days</strong>.
+    Uninstalling also removes everything stored on the device immediately.
+  </p>
+
+  <h3>Option 3 — Email request</h3>
+  <p>
+    If you would like your server-side data deleted immediately rather than waiting for the
+    automatic 60-day removal, email
+    <a href="mailto:contact.market.cue@gmail.com">contact.market.cue@gmail.com</a> from any
+    address with the subject line <strong>"TickerCue data deletion"</strong>. Because TickerCue
+    has no accounts, please include enough detail for us to identify your install (for example,
+    your watchlist symbols and brief times). We will delete the matching server record and
+    confirm by reply, typically within 7 days.
+  </p>
+
+  <h2>What is deleted and what is kept</h2>
+  <ul>
+    <li><strong>Deleted:</strong> your push notification token, watchlist, schedule, settings
+      synced to the server, and your delivered-brief history log.</li>
+    <li><strong>Kept:</strong> nothing that identifies you. TickerCue holds no name, email,
+      account, payment, or location data, so there is nothing of that kind to retain.</li>
+  </ul>
+
+  <h2>Contact</h2>
+  <p>
+    Questions about data deletion? Email
+    <a href="mailto:contact.market.cue@gmail.com">contact.market.cue@gmail.com</a>.
+  </p>
+
+  <footer>
+    © 2026 Compass Labs. See also the <a href="privacy.html">TickerCue Privacy Policy</a>.
+  </footer>
+</body>
+</html>
